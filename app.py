@@ -7,6 +7,16 @@ import json
 import re
 from dotenv import load_dotenv
 
+import yfinance as yf
+from yahooquery import search
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+from flask import jsonify, request
+
+app = FastAPI()
+
 # Load environment variables
 load_dotenv()
 
@@ -281,8 +291,59 @@ def health_check():
   })
 
 
+
+def company_name_to_symbol(company_name):
+    try:
+        results = search(company_name)
+        symbols = [quote['symbol'] for quote in results.get('quotes', [])]
+        return symbols if symbols else []
+    except Exception as e:
+        print(f"Error: {e}")
+        return []
+
+def get_company_info_for_symbols(symbols):
+    info_list = []
+    for symbol in symbols:
+        ticker = yf.Ticker(symbol)
+        info = ticker.info
+        company_data = {
+            'symbol': symbol,
+            'longName': info.get('longName', 'N/A'),
+            'sector': info.get('sector', 'N/A'),
+            'industry': info.get('industry', 'N/A'),
+            'website': info.get('website', 'N/A'),
+            'description': info.get('longBusinessSummary', 'N/A'),
+            'marketCap': info.get('marketCap', 'N/A'),
+            'regularMarketPrice': info.get('regularMarketPrice', 'N/A'),
+            'regularMarketChangePercent': info.get('regularMarketChangePercent', 'N/A'),
+            'trailingPE': info.get('trailingPE', 'N/A'),
+            'forwardPE': info.get('forwardPE', 'N/A'),
+            'beta': info.get('beta', 'N/A'),
+            'dividendYield': info.get('dividendYield', 'N/A'),
+            'profitMargins': info.get('profitMargins', 'N/A'),
+            'revenueGrowth': info.get('revenueGrowth', 'N/A'),
+            'earningsGrowth': info.get('earningsGrowth', 'N/A')
+        }
+        info_list.append(company_data)
+    return info_list
+
+@app.route('/api/company', methods=['GET'])
+def get_company():
+    company = request.args.get('company')
+    if not company:
+        return jsonify({"error": "Missing 'company' parameter"}), 400
+    symbols = company_name_to_symbol(company)
+    if not symbols:
+        return jsonify({"error": "No symbols found"}), 404
+    info_list = get_company_info_for_symbols(symbols)
+    if info_list:
+        return jsonify(info_list[0])
+    return jsonify({"error": "No info found"}), 404
+  
+  
 if __name__ == '__main__':
   print("Starting Financial PDF Analysis API...")
   print(f"Upload folder: {UPLOAD_FOLDER}")
   print(f"Financial data folder: {FINANCIAL_DATA_FOLDER}")
   app.run(debug=True, host='0.0.0.0', port=5000)
+
