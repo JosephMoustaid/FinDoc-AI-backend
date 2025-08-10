@@ -1,0 +1,12 @@
+{
+  "company_info": {},
+  "income_statement": [],
+  "balance_sheet": [],
+  "cash_flow": [],
+  "ratios_and_metrics": [],
+  "processing_stats": {
+    "successful_extractions": 0,
+    "failed_extractions": 7,
+    "sections_processed": []
+  }
+}

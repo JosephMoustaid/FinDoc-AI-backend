@@ -1,0 +1,55 @@
+{
+  "filename": "ULTABEAUTY_2023Q1_EARNINGS.pdf",
+  "extraction_result": {
+    "financial_data": {
+      "company_info": {
+        "name": "Ulta Beauty, Inc.",
+        "sector": "Retail",
+        "fiscal_year": "Fiscal 2023"
+      },
+      "revenue_data": {
+        "total_revenue": "$2.6 Billion",
+        "revenue_growth": "12.3%",
+        "revenue_breakdown": {
+          "Cosmetics": "44%",
+          "Skincare": "19%",
+          "Haircare products and styling tools": "18%",
+          "Fragrance and bath": "12%",
+          "Services": "4%",
+          "Accessories and other": "3%"
+        }
+      },
+      "profitability": {
+        "gross_profit": "$1.1 Billion",
+        "operating_profit": "$442.1 Million",
+        "net_income": "$347.1 Million",
+        "profit_margins": "40.0%"
+      },
+      "financial_position": {
+        "total_assets": "$5.375 Billion",
+        "total_liabilities": "$3.357 Billion",
+        "shareholders_equity": "$2.018 Billion",
+        "cash_position": "$636.4 Million"
+      },
+      "cash_flow": {
+        "operating_cash_flow": "$304.9 Million",
+        "free_cash_flow": "$-110.1 Million",
+        "capex": "$109.8 Million"
+      },
+      "key_metrics": {
+        "eps": "$6.88",
+        "pe_ratio": null,
+        "debt_to_equity": null,
+        "roe": null
+      },
+      "risks_and_outlook": {
+        "key_risks": null,
+        "guidance": null,
+        "market_conditions": null
+      }
+    },
+    "extraction_success": true,
+    "raw_model_output": "Here is the comprehensive JSON with the extracted financial information:\n\n```\n{\n  \"company_info\": {\n    \"name\": \"Ulta Beauty, Inc.\",\n    \"sector\": \"Retail\",\n    \"fiscal_year\": \"Fiscal 2023\"\n  },\n  \"revenue_data\": {\n    \"total_revenue\": \"$2.6 Billion\",\n    \"revenue_growth\": \"12.3%\",\n    \"revenue_breakdown\": {\n      \"Cosmetics\": \"44%\",\n      \"Skincare\": \"19%\",\n      \"Haircare products and styling tools\": \"18%\",\n      \"Fragrance and bath\": \"12%\",\n      \"Services\": \"4%\",\n      \"Accessories and other\": \"3%\"\n    }\n  },\n  \"profitability\": {\n    \"gross_profit\": \"$1.1 Billion\",\n    \"operating_profit\": \"$442.1 Million\",\n    \"net_income\": \"$347.1 Million\",\n    \"profit_margins\": \"40.0%\"\n  },\n  \"financial_position\": {\n    \"total_assets\": \"$5.375 Billion\",\n    \"total_liabilities\": \"$3.357 Billion\",\n    \"shareholders_equity\": \"$2.018 Billion\",\n    \"cash_position\": \"$636.4 Million\"\n  },\n  \"cash_flow\": {\n    \"operating_cash_flow\": \"$304.9 Million\",\n    \"free_cash_flow\": \"$-110.1 Million\",\n    \"capex\": \"$109.8 Million\"\n  },\n  \"key_metrics\": {\n    \"eps\": \"$6.88\",\n    \"pe_ratio\": null,\n    \"debt_to_equity\": null,\n    \"roe\": null\n  },\n  \"risks_and_outlook\": {\n    \"key_risks\": null,\n    \"guidance\": null,\n    \"market_conditions\": null\n  }\n}\n```\n\nNote that some fields are set to null as they were not present in the original document."
+  },
+  "text_length": 17274
+}
