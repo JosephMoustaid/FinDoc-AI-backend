@@ -4,7 +4,7 @@
     "financial_data": {
       "company_info": {
         "name": "Ulta Beauty, Inc.",
-        "sector": "Retail",
+        "sector": "Beauty Retail",
         "fiscal_year": "Fiscal 2023"
       },
       "revenue_data": {
@@ -33,23 +33,23 @@
       },
       "cash_flow": {
         "operating_cash_flow": "$304.9 Million",
-        "free_cash_flow": "$-110.1 Million",
+        "free_cash_flow": "Not available",
         "capex": "$109.8 Million"
       },
       "key_metrics": {
         "eps": "$6.88",
-        "pe_ratio": null,
-        "debt_to_equity": null,
-        "roe": null
+        "pe_ratio": "Not available",
+        "debt_to_equity": "Not available",
+        "roe": "Not available"
       },
       "risks_and_outlook": {
-        "key_risks": null,
-        "guidance": null,
-        "market_conditions": null
+        "key_risks": "Macro-economic conditions, including inflation, rising interest rates and recessionary concerns",
+        "guidance": "Net sales of $10.95 billion to $11.05 billion, comparable sales of 4% to 5%, new stores of 25-30, and operating margin of 14.7% to 15.0%",
+        "market_conditions": "The beauty category is expected to continue evolving, with ongoing labor pressures, transportation and shipping cost pressures, and the COVID-19 pandemic having a negative impact on the business"
       }
     },
     "extraction_success": true,
-    "raw_model_output": "Here is the comprehensive JSON with the extracted financial information:\n\n```\n{\n  \"company_info\": {\n    \"name\": \"Ulta Beauty, Inc.\",\n    \"sector\": \"Retail\",\n    \"fiscal_year\": \"Fiscal 2023\"\n  },\n  \"revenue_data\": {\n    \"total_revenue\": \"$2.6 Billion\",\n    \"revenue_growth\": \"12.3%\",\n    \"revenue_breakdown\": {\n      \"Cosmetics\": \"44%\",\n      \"Skincare\": \"19%\",\n      \"Haircare products and styling tools\": \"18%\",\n      \"Fragrance and bath\": \"12%\",\n      \"Services\": \"4%\",\n      \"Accessories and other\": \"3%\"\n    }\n  },\n  \"profitability\": {\n    \"gross_profit\": \"$1.1 Billion\",\n    \"operating_profit\": \"$442.1 Million\",\n    \"net_income\": \"$347.1 Million\",\n    \"profit_margins\": \"40.0%\"\n  },\n  \"financial_position\": {\n    \"total_assets\": \"$5.375 Billion\",\n    \"total_liabilities\": \"$3.357 Billion\",\n    \"shareholders_equity\": \"$2.018 Billion\",\n    \"cash_position\": \"$636.4 Million\"\n  },\n  \"cash_flow\": {\n    \"operating_cash_flow\": \"$304.9 Million\",\n    \"free_cash_flow\": \"$-110.1 Million\",\n    \"capex\": \"$109.8 Million\"\n  },\n  \"key_metrics\": {\n    \"eps\": \"$6.88\",\n    \"pe_ratio\": null,\n    \"debt_to_equity\": null,\n    \"roe\": null\n  },\n  \"risks_and_outlook\": {\n    \"key_risks\": null,\n    \"guidance\": null,\n    \"market_conditions\": null\n  }\n}\n```\n\nNote that some fields are set to null as they were not present in the original document."
+    "raw_model_output": "Here is the comprehensive JSON with the extracted financial information:\n\n```\n{\n  \"company_info\": {\n    \"name\": \"Ulta Beauty, Inc.\",\n    \"sector\": \"Beauty Retail\",\n    \"fiscal_year\": \"Fiscal 2023\"\n  },\n  \"revenue_data\": {\n    \"total_revenue\": \"$2.6 Billion\",\n    \"revenue_growth\": \"12.3%\",\n    \"revenue_breakdown\": {\n      \"Cosmetics\": \"44%\",\n      \"Skincare\": \"19%\",\n      \"Haircare products and styling tools\": \"18%\",\n      \"Fragrance and bath\": \"12%\",\n      \"Services\": \"4%\",\n      \"Accessories and other\": \"3%\"\n    }\n  },\n  \"profitability\": {\n    \"gross_profit\": \"$1.1 Billion\",\n    \"operating_profit\": \"$442.1 Million\",\n    \"net_income\": \"$347.1 Million\",\n    \"profit_margins\": \"40.0%\"\n  },\n  \"financial_position\": {\n    \"total_assets\": \"$5.375 Billion\",\n    \"total_liabilities\": \"$3.357 Billion\",\n    \"shareholders_equity\": \"$2.018 Billion\",\n    \"cash_position\": \"$636.4 Million\"\n  },\n  \"cash_flow\": {\n    \"operating_cash_flow\": \"$304.9 Million\",\n    \"free_cash_flow\": \"Not available\",\n    \"capex\": \"$109.8 Million\"\n  },\n  \"key_metrics\": {\n    \"eps\": \"$6.88\",\n    \"pe_ratio\": \"Not available\",\n    \"debt_to_equity\": \"Not available\",\n    \"roe\": \"Not available\"\n  },\n  \"risks_and_outlook\": {\n    \"key_risks\": \"Macro-economic conditions, including inflation, rising interest rates and recessionary concerns\",\n    \"guidance\": \"Net sales of $10.95 billion to $11.05 billion, comparable sales of 4% to 5%, new stores of 25-30, and operating margin of 14.7% to 15.0%\",\n    \"market_conditions\": \"The beauty category is expected to continue evolving, with ongoing labor pressures, transportation and shipping cost pressures, and the COVID-19 pandemic having a negative impact on the business\"\n  }\n}\n```\n\nNote that some fields are not available in the document, so they are set to `null` or `Not available` in the JSON output."
   },
   "text_length": 17274
 }
