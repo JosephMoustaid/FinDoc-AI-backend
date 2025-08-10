@@ -1,8 +1,3 @@
-from gpt4all import GPT4All
-import json
-
-llm = GPT4All("mistral-7b-instruct-v0.1.Q4_0.gguf")
-
 FINANCIAL_METRICS_PROMPT = """
 You are a senior financial analyst.
 Your task: extract **all possible financial metrics** from the text below.
@@ -40,21 +35,6 @@ Output JSON with this structure:
   "other": []
 }}
 
+Question: {question}
 Answer:
 """
-
-def ask_local_llm(context: str) -> str:
-    prompt = FINANCIAL_METRICS_PROMPT.format(context=context)
-    output = llm.generate(prompt, max_tokens=1000)
-    print("LLM raw output:", output)
-    return output.strip()
-
-def merge_metrics(metrics_list):
-    merged = []
-    seen = set()
-    for m in metrics_list:
-        key = (m.get('metric_name'), m.get('period'))
-        if key not in seen:
-            seen.add(key)
-            merged.append(m)
-    return merged

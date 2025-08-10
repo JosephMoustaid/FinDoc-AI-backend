@@ -1,7 +1,6 @@
-from gpt4all import GPT4All
-import json
+from groq import Groq
 
-llm = GPT4All("mistral-7b-instruct-v0.1.Q4_0.gguf")
+client = Groq()
 
 FINANCIAL_METRICS_PROMPT = """
 You are a senior financial analyst.
@@ -40,21 +39,26 @@ Output JSON with this structure:
   "other": []
 }}
 
+Question: {question}
 Answer:
 """
 
-def ask_local_llm(context: str) -> str:
-    prompt = FINANCIAL_METRICS_PROMPT.format(context=context)
-    output = llm.generate(prompt, max_tokens=1000)
-    print("LLM raw output:", output)
-    return output.strip()
+def ask_groq_llm(context: str, question: str = "Extract all financial metrics") -> str:
+    prompt = FINANCIAL_METRICS_PROMPT.format(context=context, question=question)
 
-def merge_metrics(metrics_list):
-    merged = []
-    seen = set()
-    for m in metrics_list:
-        key = (m.get('metric_name'), m.get('period'))
-        if key not in seen:
-            seen.add(key)
-            merged.append(m)
-    return merged
+    completion = client.chat.completions.create(
+        model="openai/gpt-oss-120b",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0,
+        max_completion_tokens=1500,
+        top_p=1,
+        reasoning_effort="medium",
+        stream=False
+    )
+
+    if hasattr(completion, 'choices'):
+        return completion.choices[0].message.content.strip()
+    else:
+        return str(completion).strip()
